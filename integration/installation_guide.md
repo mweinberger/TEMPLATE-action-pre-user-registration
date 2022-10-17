@@ -1,15 +1,17 @@
-[[TODO: Summary text that does not duplicate the listing content]]
+Pangea is a collection of security services, all API-based, that can quickly and easily be added to any cloud application, embedded in the runtime code. Pangea provides app builders with a wide selection of security services so they can easily embed security into their application. It’s similar in nature to AWS for Compute APIs, Twilio for Communications APIs, Stripe for Billing APIs. And now there is Pangea for Security APIs.
 
 ## Prerequisites
 
 1. An Auth0 account and tenant. [Sign up for free](https://auth0.com/signup).
-2. [[TODO: Instructions for creating an account with your service]]
+2. A Pangea account [Sign up for free](https://console.pangea.cloud/?signup=1).
 
-## Set up [[TODO: Your service name]]
+## Set up Pangea
 
-To configure the integration with [[TODO: Your service name]]:
+To configure the integration with Pangea:
 
-[[TODO: Add steps as an ordered list for configuring your service]]
+1. Configure Pangea Secure Audit log following [the configuration guide](https://docs.aws.us.pangea.cloud/docs/getting-started/configure-services/).
+2. When you create your token in the guide, make sure it also has access to embargo and domain intel
+3. Save your Pangea token and Audit log ConfigId
 
 ## Add the Auth0 Action
 
@@ -18,8 +20,8 @@ To configure the integration with [[TODO: Your service name]]:
 1. Select **Add Integration** (at the top of this page).
 1. Read the necessary access requirements, and select **Continue**.
 1. Configure the integration using the following fields:
-   * [[TODO: Describe all configuration fields]]
-   * [[TODO: Describe all secret fields]]
+   * CONFIGID - The ConfigId that you saved from the Pangea Secure Audit Log service.
+   * TOKEN - The token that you saved from the Pangea configuratio guide which has access to secure audit log, embargo and domain intel
 1. Add the integration to your Library by selecting **Create**.
 1. In the modal that appears, select the **Add to flow** link.
 1. Drag the Action into the desired location in the flow.
@@ -27,8 +29,10 @@ To configure the integration with [[TODO: Your service name]]:
 
 ## Results
 
-[[TODO: Explain what the customer should expect when the Action is configured and deployed]]
+Once the Action is added, new user registrations will be defended by Pangea APIs.
+Each new user registration will be checked against Pangea embargo, and Pangea domain intel.
+The user will be accepted or rejected, and the results will be written to Pangea secure audit log.
 
 ## Troubleshooting
 
-[[TODO: Common issues or links to troubleshooting resources]]
+For any questions or comments, [reach out to us at Pangea](mailto:integrations@pangea.cloud).
